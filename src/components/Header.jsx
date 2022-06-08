@@ -2,7 +2,7 @@ import {PositionSelector, Time} from "./";
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between h-[50px] bg-black  px-4">
+    <header className="flex items-center justify-between h-[50px] bg-black px-4 flex-wrap">
       <PositionSelector />
       <p className=" text-orange-300">
         Press <span className="font-bold">ESC</span> key to hide the window and{" "}

@@ -7,7 +7,7 @@ export const DraggableContainer = () => {
 
   return (
     <div
-      className=" h-[150px] w-[150px]  text-lg font-semibold bg-stone-400 border-[1px] border-black flex flex-col justify-between relative left-0"
+      className=" h-[150px] w-[150px] text-lg font-semibold bg-stone-400 border-[1px] border-black flex flex-col justify-between"
       draggable="true"
     >
       <p className="p-1 ">

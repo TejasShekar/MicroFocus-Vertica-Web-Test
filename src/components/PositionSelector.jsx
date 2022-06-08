@@ -7,7 +7,7 @@ export const PositionSelector = () => {
   };
 
   return (
-    <div className="flex items-center ">
+    <div className="flex items-center flex-wrap ">
       <h3 className="font-bold">Position : </h3>
       <ul className="flex items-center">
         <li className="mx-2">
