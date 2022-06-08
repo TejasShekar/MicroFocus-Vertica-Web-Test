@@ -1,7 +1,10 @@
 import {usePosition} from "../contexts/positionContext";
 
 export const PositionSelector = () => {
-  const {positionDispatch} = usePosition();
+  const {
+    positionDispatch,
+    positionState: {positionName},
+  } = usePosition();
   const positionHandler = (e) => {
     positionDispatch({type: e.target.value});
   };
@@ -16,6 +19,7 @@ export const PositionSelector = () => {
             id="center"
             name="position_selector"
             value="CENTER"
+            checked={positionName === "Center"}
             onChange={positionHandler}
           />
           <label htmlFor="center">Center</label>
@@ -26,6 +30,7 @@ export const PositionSelector = () => {
             id="lower_right"
             name="position_selector"
             value="LOWER_RIGHT"
+            checked={positionName === "Lower Right"}
             onChange={positionHandler}
           />
           <label htmlFor="lower_right">Lower Right</label>
