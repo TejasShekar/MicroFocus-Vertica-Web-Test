@@ -6,7 +6,7 @@ const usePosition = () => useContext(PositionContext);
 const PositionProvider = ({children}) => {
   const [positionState, positionDispatch] = useReducer(positionReducer, {
     positionName: "",
-    styles: {alignItems: "flex-start", justifyContent: "flex-start"},
+    styles: {},
   });
   return (
     <PositionContext.Provider value={{positionState, positionDispatch}}>
