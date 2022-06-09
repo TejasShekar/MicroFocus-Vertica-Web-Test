@@ -3,4 +3,3 @@ export {PositionSelector} from "./PositionSelector";
 export {Header} from "./Header";
 export {Footer} from "./Footer";
 export {DisplayArea} from "./DisplayArea";
-export {DraggableContainer} from "./DraggableContainer";
