@@ -12,30 +12,34 @@ export const DisplayArea = () => {
   const dragDivRef = useRef(null);
 
   useEffect(() => {
-    document.addEventListener("keydown", (e) => {
+    const onKeyPress = (e) => {
       switch (e.key) {
         case "Escape":
-          console.log((dragDivRef.current.style.display = "none"));
+          dragDivRef.current.style.display = "none";
           break;
         case "Enter":
-          console.log((dragDivRef.current.style.display = "flex"));
+          dragDivRef.current.style.display = "flex";
           break;
         default:
           break;
       }
-    });
+    };
+    document.addEventListener("keydown", onKeyPress);
+    return () => {
+      document.removeEventListener("keydown", onKeyPress);
+    };
   }, []);
 
   return (
     <main>
       <div
-        className=" h-[400px] w-full bg-stone-300 flex"
+        className=" h-[400px] w-full bg-zinc-300 flex"
         onDragEnter={(e) => e.preventDefault()}
         onDragOver={(e) => e.preventDefault()}
         onDragLeave={() => {}}
       >
         <div
-          className=" h-[200px] w-[200px] text-lg font-semibold bg-stone-400 border-[1px] border-black flex flex-col justify-between absolute"
+          className=" h-[200px] w-[200px] text-lg font-semibold bg-orange-400 flex flex-col justify-between absolute rounded-lg"
           ref={dragDivRef}
           draggable="true"
           onDragStart={(e) => {

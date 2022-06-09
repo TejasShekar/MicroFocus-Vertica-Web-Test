@@ -1,11 +1,15 @@
 export const positionReducer = (state, {type, payload}) => {
-  // console.log(payload);
   switch (type) {
     case "CENTER":
       return {
         ...state,
         positionName: "Center",
-        styles: {top: "50%", left: "50%", transform: "translate(-50%, -50%)"},
+        styles: {
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          ...payload,
+        },
       };
     case "LOWER_RIGHT":
       return {
