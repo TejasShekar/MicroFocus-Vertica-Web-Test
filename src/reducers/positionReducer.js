@@ -23,12 +23,6 @@ export const positionReducer = (state, {type, payload}) => {
         positionName: "Floating...",
         styles: {left: `${payload.x}px`, top: `${payload.y}px`},
       };
-    case "SAVED_POSITION":
-      return {
-        ...state,
-        positionName: payload.positionName,
-        styles: payload.styles,
-      };
     default:
       return state;
   }
