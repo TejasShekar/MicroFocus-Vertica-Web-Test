@@ -5,8 +5,9 @@ const PositionContext = createContext();
 const usePosition = () => useContext(PositionContext);
 const PositionProvider = ({children}) => {
   const [positionState, positionDispatch] = useReducer(positionReducer, {
-    positionName: "",
-    styles: {},
+    // get saved position on intial render
+    positionName: localStorage.getItem("positionName") ?? "",
+    styles: JSON.parse(localStorage.getItem("divStyle")) ?? {},
   });
   return (
     <PositionContext.Provider value={{positionState, positionDispatch}}>
