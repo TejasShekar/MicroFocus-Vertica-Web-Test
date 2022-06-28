@@ -1,12 +1,7 @@
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import {usePosition} from "../contexts/positionContext";
 
 export const PositionSelector = () => {
-  const [initialStyles] = useState(() => ({
-    positionName: localStorage.getItem("positionName"),
-    styles: JSON.parse(localStorage.getItem("divStyle")),
-  }));
-
   const {
     positionDispatch,
     positionState: {positionName, styles},
@@ -15,10 +10,7 @@ export const PositionSelector = () => {
     positionDispatch({type: e.target.value});
   };
 
-  useEffect(() => {
-    positionDispatch({type: "SAVED_POSITION", payload: initialStyles});
-  }, []);
-
+  // save the position on everychange
   useEffect(() => {
     localStorage.setItem("positionName", positionName);
     localStorage.setItem("divStyle", JSON.stringify(styles));
